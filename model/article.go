@@ -27,7 +27,7 @@ func (article *Article) BeforeUpdate(scope *gorm.Scope) error {
 	return nil
 }
 
-func ExistArticleByIDD(id int) bool {
+func ExistArticleByID(id int) bool {
 	var article Article
 	db.Select("id").Where("id=?", id).First(&article)
 	if article.ID > 0 {
