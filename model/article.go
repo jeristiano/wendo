@@ -12,7 +12,7 @@ type Article struct {
 	Title      string `json:"title"`
 	Desc       string `json:"desc"`
 	Content    string `json:"content"`
-	CreateBy   string `json:"created_by"`
+	CreatedBy  string `json:"created_by"`
 	ModifiedBy string `json:"modified_by"`
 	State      int    `json:"state"`
 }
@@ -61,12 +61,12 @@ func EditArticle(id int, data interface{}) bool {
 func AddArticle(data map[string]interface{}) bool {
 	db.Create(
 		&Article{
-			TagID:    data["tag_id"].(int),
-			Title:    data["title"].(string),
-			Desc:     data["desc"].(string),
-			Content:  data["content"].(string),
-			CreateBy: data["created_by"].(string),
-			State:    data["state"].(int),
+			TagID:     data["tag_id"].(int),
+			Title:     data["title"].(string),
+			Desc:      data["desc"].(string),
+			Content:   data["content"].(string),
+			CreatedBy: data["created_by"].(string),
+			State:     data["state"].(int),
 		})
 	return true
 }
